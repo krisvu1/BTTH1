@@ -1,0 +1,34 @@
+boday{
+    font-size: 16px;
+}
+.fs-24 {
+    font-size: 26px;
+}
+
+li{
+    list-style-type:none;
+}
+li a{
+    
+    color:black;
+    padding:0 20px;
+    
+
+}
+.custom-select {
+    width: 100%;
+  
+    margin-bottom: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+  
+    font-size: 16px; /* Increase font size */
+}
+
+.custom-select option {
+    font-size: 12px; /* Increase font size for options */
+ 
+}
+
+/* Style for selected option */
