@@ -6,23 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CoreUI</title>
-   <link rel="stylesheet" href="resources/css/app.css">
+    <link rel="stylesheet" href="resources/css/app.css">
     @stack('before-styles')
-    @vite(['resources/sass/style.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/style.scss', 'resources/js/app.js', 'resources/css/dashboard.scss'])
+
     @stack('after-styles')
 </head>
 
-<body class="c-app"  >
+<body class="c-app">
     @include('layouts.sidebar')
     <div class="c-wrapper c-fixed-components">
         @include('layouts.header')
 
         @yield('content')
-        
+
         @include('layouts.footer')
     </div><!--c-wrapper-->
     @stack('before-scripts')
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+    </script>
     @stack('after-scripts')
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -31,9 +34,9 @@
             event.preventDefault(); // Ngăn chặn form submit mặc định
             const email_name = $('input[name="name_email"]').val();
             const category = $('select[name="category"]').val();
-    
+
             $.ajax({
-                url: '{{ route('user.index') }}',  // Sử dụng Blade để nhúng URL
+                url: '{{ route('user.index') }}', // Sử dụng Blade để nhúng URL
                 type: 'GET',
                 data: {
                     email_name: email_name,
@@ -62,7 +65,7 @@
             });
         }
     </script>
-    
+
 
 </body>
 
