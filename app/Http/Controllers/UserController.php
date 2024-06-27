@@ -12,7 +12,8 @@ class UserController extends Controller
     {
         $name_email = $request->name_email ?? ''; // $request->name_email ? $request->name_email : ''
         $category = $request->category ?? '';
-        //  dd($request->all());
+
+
         $users = User::query();
         if (!empty($name_email)) {
             $users = User::where(function ($query) use ($name_email, $category) {
@@ -57,17 +58,23 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('user.update-user', compact('user'));
+        $user = User::findOrFail($id);
+        return view('user.edit-user', compact('user'));
     }
 
     public function update(Request $request, $id)
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $id,
             'type' => 'required|string',
         ]);
+        $user = User::find($id);
+        if (!$user) {
+            return redirect()->route('user.error')->with('error', 'User not found.');
+        }
+
         $data = $request->all();
         $user = User::find($request->id);
         $user->update($data);
@@ -79,5 +86,8 @@ class UserController extends Controller
         $user = User::find($id);
         return view('user.show-user', compact('user'));
     }
-  
+    public function error()
+    {
+        return view('user.error');
+    }
 }

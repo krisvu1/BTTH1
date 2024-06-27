@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CoreUI</title>
     <link rel="stylesheet" href="resources/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @stack('before-styles')
-    @vite(['resources/sass/style.scss', 'resources/js/app.js', 'resources/css/dashboard.scss'])
+    @vite(['resources/sass/style.scss', 'resources/js/app.js'])
 
     @stack('after-styles')
 </head>
 
 <body class="c-app">
-    @include('layouts.sidebar')
+    @if (Auth::user()->is_admin == 1)
+        @include('layouts.sidebar')
+    @endif
     <div class="c-wrapper c-fixed-components">
         @include('layouts.header')
+
 
         @yield('content')
 

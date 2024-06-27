@@ -1,29 +1,18 @@
 @extends('layouts.main')
 @section('content')
-    <div class="container-fluid mt-4 ms-4  ">
-
+    <div class="mt-4 container-fluid ms-4 ">
         <div class="row">
-            <div class="col-lg-6 border border-1 rounded-pill text paddingDashboard ">
-                <p>Total number of orders in Jauary</p>
-                <h1>100</h1>
-            </div>
-            <div class="col-lg-6 col-lg-6 border border-1 rounded-pill text paddingDashboard">
-                <p>Total amout in Jauary</p>
-                <h1>200</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-lg-6 border border-1 rounded-pill text paddingDashboard my-4">
-                <p>Total number of User in February</p>
+            <div class="my-4 border col-lg-4 col-lg-6 border-1 rounded-pill text paddingDashboard">
+                <p>Total number of User </p>
                 <h1>{{ $userCounts }}</h1>
             </div>
-            <div class="col-lg-4 col-lg-6 border border-1 rounded-pill text paddingDashboard my-4">
-                <p>Total number of products</p>
-                <h1>200</h1>
+            <div class="my-4 border col-lg-4 col-lg-6 border-1 rounded-pill text paddingDashboard">
+                <p>Total number of Products</p>
+                <h1>{{ $productCounts }}</h1>
             </div>
-            <div class="col-lg-4 col-lg-6 border border-1 rounded-pill text paddingDashboard mb-4">
-                <p>Total number of categories</p>
-                <h1>100</h1>
+            <div class="mb-4 border col-lg-4 col-lg-6 border-1 rounded-pill text paddingDashboard">
+                <p>Total number of Categories</p>
+                <h1>{{ $categoryCounts }}</h1>
             </div>
         </div>
 

@@ -1,6 +1,7 @@
-import 'alpinejs'
+import './bootstrap';
 
-// CoreUI
-import * as coreui from '@coreui/coreui'
-window.coreui = coreui
-import './bootstrap'
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();

@@ -10,7 +10,7 @@
 
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="{{ route('dasboard.index') }}"
+            <a class="c-sidebar-nav-link" href="{{ route('dashboard') }}"
                 active="activeClass(Route::is('admin.dashboard'), 'c-active')">
                 <i class="c-sidebar-nav-icon cil-speedometer"></i>Dashboard
             </a>
@@ -22,23 +22,23 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="route('admin.dashboard')"
+            <a class="c-sidebar-nav-link" href="{{ route('category.index') }}"
                 active="activeClass(Route::is('admin.dashboard'), 'c-active')">
                 <i class="c-sidebar-nav-icon cil-speedometer"></i>Category Management
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="route('admin.dashboard')"
+            <a class="c-sidebar-nav-link" href="{{ route('product.index') }}"
                 active="activeClass(Route::is('admin.dashboard'), 'c-active')">
                 <i class="c-sidebar-nav-icon cil-speedometer"></i>Product Manegement
             </a>
         </li>
-        <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="route('admin.dashboard')"
+        {{-- <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('') }}"
                 active="activeClass(Route::is('admin.dashboard'), 'c-active')">
                 <i class="c-sidebar-nav-icon cil-speedometer"></i>Oder Management
             </a>
-        </li>
+        </li> --}}
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
         data-class="c-sidebar-minimized"></button>
