@@ -39,7 +39,6 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
@@ -65,7 +64,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'status' => 'required|string',
@@ -79,9 +78,10 @@ class ProductController extends Controller
         if (!$product) {
             return redirect()->route('product.error')->with('error', 'Product not found.');
         }
-        $data = $request->all();
-        $product->update($data);
-        return redirect()->route('product.index');
+        $product->update($validatedData);
+
+        // Trả về thông báo thành công
+        return redirect()->route('product.index')->with('success', 'Product updated successfully.');
     }
 
     public function destroy($id)

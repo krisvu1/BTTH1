@@ -42,16 +42,15 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
             'created_by' => 'required',
         ]);
         $category = Category::find($id);
         if (!$category) {
             return redirect()->route('category.error')->with('error', 'Category not found');
         }
-        $data = $request->only(['name', 'created_by']);
-        $category->update($data);
+        $category->update($validatedData);
         return redirect()->route('category.index');
     }
 

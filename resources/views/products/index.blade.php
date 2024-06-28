@@ -46,7 +46,7 @@
         <div class="mt-4 row">
             <div class="col-lg-2">
                 <a href="{{ route('product.create') }}"><button class="btn btn-success w-100">Create new
-                        user</button></a>
+                        product</button></a>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger"type="submit">Delete</button>
+                                        <button class="btn btn-danger btn-delete"type="submit">Delete</button>
                                     </form>
                                 </td>
                             </tr>

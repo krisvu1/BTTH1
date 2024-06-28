@@ -15,7 +15,7 @@
 </head>
 
 <body class="c-app">
-    @if (Auth::user()->is_admin == 1)
+    @if (Auth::check() && Auth::user()->is_admin == 1)
         @include('layouts.sidebar')
     @endif
     <div class="c-wrapper c-fixed-components">

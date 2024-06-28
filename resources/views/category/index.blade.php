@@ -19,7 +19,7 @@
         <div class="mt-4 row">
             <div class="col-lg-2">
                 <a href="{{ route('category.create') }}"><button class="btn btn-success w-100">Create new
-                        user</button></a>
+                        category</button></a>
             </div>
         </div>
         <div class="row" style="margin-top:20px">

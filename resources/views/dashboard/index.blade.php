@@ -14,6 +14,10 @@
                 <p>Total number of Categories</p>
                 <h1>{{ $categoryCounts }}</h1>
             </div>
+            <div class="mb-4 border col-lg-4 col-lg-6 border-1 rounded-pill text paddingDashboard">
+                <p>Total number of Order</p>
+                <h1>{{ $orderCounts }}</h1>
+            </div>
         </div>
 
     </div>

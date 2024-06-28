@@ -64,7 +64,7 @@
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger"type="submit">Delete</button>
+                                        <button class="btn btn-danger btn-delete"type="submit">Delete</button>
                                     </form>
                                 </td>
                             </tr>
@@ -77,4 +77,5 @@
             </div>
         </div>
     </div>
+
 @endsection
